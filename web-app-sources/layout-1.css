@@ -1,0 +1,59 @@
+:root {
+    --padding-inline: 15rem;
+    --padding-inline-under-w1000: 1rem;
+
+    --header-height: 5rem;
+
+    --main-gap: 1rem;
+
+    --footer-height: 2.5rem;
+    --footer-font-size: .75rem;
+}
+
+html {
+    position: relative;
+
+    min-height: 100%;
+
+    body {
+        header {
+            position: fixed; top: 0;
+
+            height: var(--header-height); padding-inline: var(--padding-inline);
+
+            justify-content: space-between;
+        }
+
+        main {
+            padding: var(--header-height) var(--padding-inline) var(--footer-height); gap: var(--main-gap);
+
+            flex-direction: column;
+        }
+
+        header, main {
+            @media (width < 1000px) {
+                padding-inline: var(--padding-inline-under-w1000);
+            }
+        }
+
+        footer {
+            position: absolute; bottom: 0;
+
+            width: fit-content; height: var(--footer-height); margin-inline: auto;
+
+            p {
+                font-size: var(--footer-font-size);
+            }
+        }
+
+        header, main, footer {
+            display: flex;
+        }
+
+        header, footer {
+            right: 0; left: 0;
+
+            align-items: center;
+        }
+    }
+}

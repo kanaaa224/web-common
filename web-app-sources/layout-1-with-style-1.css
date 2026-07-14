@@ -1,0 +1,71 @@
+@import url(base.css);
+@import url(layout-1.css);
+@import url(icons.css);
+
+html {
+    body {
+        background-color: #fff; color: #000;
+
+        @media (prefers-color-scheme: dark) {
+            background-color: #222; color: #fff;
+        }
+
+        header {
+            background-color: inherit; color: inherit;
+
+            @media (width < 1000px) {
+                flex-direction: column; justify-content: center; align-items: flex-start;
+            }
+
+            p {
+                opacity: .25;
+            }
+        }
+
+        main {
+            article {
+                section {
+                    padding: 1rem 1.5rem;
+
+                    background-color: #0000000d;
+
+                    border-radius: .5rem;
+
+                    @media (prefers-color-scheme: dark) {
+                        background-color: #ffffff0d;
+                    }
+
+                    span.mdi {
+                        text-align: center;
+
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+
+            article, article section {
+                gap: inherit;
+
+                display: inherit; flex-direction: inherit;
+            }
+        }
+
+        footer {
+            p {
+                opacity: .25;
+            }
+        }
+
+        header, main, footer {
+            a {
+                text-decoration: underline;
+
+                cursor: pointer;
+            }
+
+            img {
+                pointer-events: none;
+            }
+        }
+    }
+}
